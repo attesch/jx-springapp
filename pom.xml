@@ -79,7 +79,7 @@
 					</plugins>
 				</configuration>
         </plugin>
-
+<!-- Comment out dependency check
 				<plugin>
               <groupId>org.owasp</groupId>
               <artifactId>dependency-check-maven</artifactId>
@@ -94,5 +94,5 @@
             </plugin>
     </plugins>
 	</build>
-
+ -->
 </project>
