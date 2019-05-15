@@ -57,9 +57,16 @@
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>3.1.1</version>
+				<executions>
+					<execution>
+							<goals>
+									<goal>check</goal>
+							</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<effort>Max</effort>
-					<threshold>Low</threshold>
+					<threshold>High</threshold>
 					<failOnError>true</failOnError>
 					<includeFilterFile>${session.executionRootDirectory}/spotbugs-security-include.xml</includeFilterFile>
 					<excludeFilterFile>${session.executionRootDirectory}/spotbugs-security-exclude.xml</excludeFilterFile>
@@ -72,20 +79,20 @@
 					</plugins>
 				</configuration>
         </plugin>
-
-				<plugin>
-              <groupId>org.owasp</groupId>
-              <artifactId>dependency-check-maven</artifactId>
-              <version>5.0.0-M3</version>
-              <executions>
-                  <execution>
-                      <goals>
-                          <goal>check</goal>
-                      </goals>
-                  </execution>
-              </executions>
-            </plugin>
-    </plugins>
+				<!-- Comment out dependency check
+								<plugin>
+											<groupId>org.owasp</groupId>
+											<artifactId>dependency-check-maven</artifactId>
+											<version>5.0.0-M3</version>
+											<executions>
+													<execution>
+															<goals>
+																	<goal>check</goal>
+															</goals>
+													</execution>
+											</executions>
+										</plugin> 				-->
+		</plugins>
 	</build>
 
 </project>
